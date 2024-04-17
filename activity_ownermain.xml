@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Image upload -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upload Images"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+        <!-- ImageView to display uploaded image -->
+        <ImageView
+            android:id="@+id/imageViewUploaded"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:visibility="gone" />
+
+        <!-- Button to upload images -->
+        <Button
+            android:id="@+id/buttonUploadImages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Images" />
+
+        <!-- Horizontal divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Services -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Services Offered"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- Edit text for adding services -->
+        <EditText
+            android:id="@+id/editTextServices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Add services offered"
+            android:maxLines="5"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Horizontal divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Address -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- Edit text for adding address -->
+        <EditText
+            android:id="@+id/editTextAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Add address"
+            android:maxLines="5"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Horizontal divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Contact -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- Edit text for adding contact details -->
+        <EditText
+            android:id="@+id/editTextContact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Add contact details"
+            android:inputType="phone"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Save button -->
+        <Button
+            android:id="@+id/buttonSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Save" />
+
+    </LinearLayout>
+</ScrollView>
