@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pink"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <!-- SearchView -->
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:queryHint="Search..."
+        android:iconifiedByDefault="false"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_above="@id/bottomnavigator">
+
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="5"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <!-- Shop 1 -->
+            <RelativeLayout
+                android:id="@+id/relative1"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <!-- ImageView -->
+                <ImageView
+                    android:id="@+id/shop1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/barbershop1"
+                    android:layout_columnSpan="2"/>
+
+                <!-- TextView 1 -->
+                <TextView
+                    android:id="@+id/shopname1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shop Name"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_below="@id/shop1"/>
+
+                <!-- TextView 2 -->
+                <TextView
+                    android:id="@+id/location1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bungoma"
+                    android:textSize="16sp"
+                    android:layout_below="@id/shopname1"
+                    android:layout_marginTop="8dp"/>
+
+                <!-- Button -->
+                <Button
+                    android:id="@+id/btnbook1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Book"
+                    android:backgroundTint="@color/blue"
+                    android:layout_below="@id/location1"
+                    android:layout_marginTop="8dp"/>
+            </RelativeLayout>
+
+            <!-- Shop 2 -->
+            <RelativeLayout
+                android:id="@+id/relative2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <!-- ImageView -->
+                <ImageView
+                    android:id="@+id/shop2"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/barbershop2"
+                    android:layout_columnSpan="2"/>
+
+                <!-- TextView 1 -->
+                <TextView
+                    android:id="@+id/shopname2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shop Name"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_below="@id/shop2"/>
+
+                <!-- TextView 2 -->
+                <TextView
+                    android:id="@+id/location2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Machakos"
+                    android:textSize="16sp"
+                    android:layout_below="@id/shopname2"
+                    android:layout_marginTop="8dp"/>
+
+                <!-- Button -->
+                <Button
+                    android:id="@+id/btnbook2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Book"
+                    android:backgroundTint="@color/blue"
+                    android:layout_below="@id/location2"
+                    android:layout_marginTop="8dp"/>
+            </RelativeLayout>
+
+
+
+            <!-- Shop 3 -->
+            <RelativeLayout
+                android:id="@+id/relative3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <!-- ImageView -->
+                <ImageView
+                    android:id="@+id/shop3"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/barbershop3"
+                    android:layout_columnSpan="2"/>
+
+                <!-- TextView 1 -->
+                <TextView
+                    android:id="@+id/shopname3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shop Name"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_below="@id/shop3"/>
+
+                <!-- TextView 2 -->
+                <TextView
+                    android:id="@+id/location3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nakuru"
+                    android:textSize="16sp"
+                    android:layout_below="@id/shopname3"
+                    android:layout_marginTop="8dp"/>
+
+                <!-- Button -->
+                <Button
+                    android:id="@+id/btnbook3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Book"
+                    android:backgroundTint="@color/blue"
+                    android:layout_below="@id/location3"
+                    android:layout_marginTop="8dp"/>
+            </RelativeLayout>
+
+
+
+            <!-- Shop 4 -->
+            <RelativeLayout
+                android:id="@+id/relative4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <!-- ImageView -->
+                <ImageView
+                    android:id="@+id/shop4"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/barbershop4"
+                    android:layout_columnSpan="2"/>
+
+                <!-- TextView 1 -->
+                <TextView
+                    android:id="@+id/shopname4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shop Name"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_below="@id/shop4"/>
+
+                <!-- TextView 2 -->
+                <TextView
+                    android:id="@+id/location4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Eldoret"
+                    android:textSize="16sp"
+                    android:layout_below="@id/shopname4"
+                    android:layout_marginTop="8dp"/>
+
+                <!-- Button -->
+                <Button
+                    android:id="@+id/btnbook4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Book"
+                    android:backgroundTint="@color/blue"
+                    android:layout_below="@id/location4"
+                    android:layout_marginTop="8dp"/>
+            </RelativeLayout>
+
+
+            <!-- Shop 5 -->
+            <RelativeLayout
+                android:id="@+id/relative5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <!-- ImageView -->
+                <ImageView
+                    android:id="@+id/shop5"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/barbershop5"
+                    android:layout_columnSpan="2"/>
+
+                <!-- TextView 1 -->
+                <TextView
+                    android:id="@+id/shopname5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shop Name"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_below="@id/shop5"/>
+
+                <!-- TextView 2 -->
+                <TextView
+                    android:id="@+id/location5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Naivasha"
+                    android:textSize="16sp"
+                    android:layout_below="@id/shopname5"
+                    android:layout_marginTop="8dp"/>
+
+                <!-- Button -->
+                <Button
+                    android:id="@+id/btnbook5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Book"
+                    android:backgroundTint="@color/blue"
+                    android:layout_below="@id/location5"
+                    android:layout_marginTop="8dp"/>
+            </RelativeLayout>
+
+            <!-- Shop 6 -->
+            <RelativeLayout
+                android:id="@+id/relative6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <!-- ImageView -->
+                <ImageView
+                    android:id="@+id/shop6"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/barbershop6"
+                    android:layout_columnSpan="2"/>
+
+                <!-- TextView 1 -->
+                <TextView
+                    android:id="@+id/shopname6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shop Name"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_below="@id/shop6"/>
+
+                <!-- TextView 2 -->
+                <TextView
+                    android:id="@+id/location6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kakamega"
+                    android:textSize="16sp"
+                    android:layout_below="@id/shopname6"
+                    android:layout_marginTop="8dp"/>
+
+                <!-- Button -->
+                <Button
+                    android:id="@+id/btnbook6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Book"
+                    android:backgroundTint="@color/blue"
+                    android:layout_below="@id/location6"
+                    android:layout_marginTop="8dp"/>
+            </RelativeLayout>
+
+            <!-- Shop 7 -->
+            <RelativeLayout
+                android:id="@+id/relative7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <!-- ImageView -->
+                <ImageView
+                    android:id="@+id/shop7"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/barbershop7"
+                    android:layout_columnSpan="2"/>
+
+                <!-- TextView 1 -->
+                <TextView
+                    android:id="@+id/shopname7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shop Name"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_below="@id/shop7"/>
+
+                <!-- TextView 2 -->
+                <TextView
+                    android:id="@+id/location7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kitale"
+                    android:textSize="16sp"
+                    android:layout_below="@id/shopname7"
+                    android:layout_marginTop="8dp"/>
+
+                <!-- Button -->
+                <Button
+                    android:id="@+id/btnbook7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Book"
+                    android:backgroundTint="@color/blue"
+                    android:layout_below="@id/location7"
+                    android:layout_marginTop="8dp"/>
+            </RelativeLayout>
+
+            <!-- Shop 8 -->
+
+            <RelativeLayout
+                android:id="@+id/relative8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <!-- ImageView -->
+                <ImageView
+                    android:id="@+id/shop8"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/barbershop8"
+                    android:layout_columnSpan="2"/>
+
+                <!-- TextView 1 -->
+                <TextView
+                    android:id="@+id/shopname8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shop Name"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_below="@id/shop8"/>
+
+                <!-- TextView 2 -->
+                <TextView
+                    android:id="@+id/location8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kisii"
+                    android:textSize="16sp"
+                    android:layout_below="@id/shopname8"
+                    android:layout_marginTop="8dp"/>
+
+                <!-- Button -->
+                <Button
+                    android:id="@+id/btnbook8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Book"
+                    android:backgroundTint="@color/blue"
+                    android:layout_below="@id/location8"
+                    android:layout_marginTop="8dp"/>
+            </RelativeLayout>
+
+            <!-- Shop 9 -->
+
+            <RelativeLayout
+                android:id="@+id/relative9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <!-- ImageView -->
+                <ImageView
+                    android:id="@+id/shop9"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/babrbershop9"
+                    android:layout_columnSpan="2"/>
+
+                <!-- TextView 1 -->
+                <TextView
+                    android:id="@+id/shopname9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shop Name"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_below="@id/shop9"/>
+
+                <!-- TextView 2 -->
+                <TextView
+                    android:id="@+id/location9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kitui"
+                    android:textSize="16sp"
+                    android:layout_below="@id/shopname9"
+                    android:layout_marginTop="8dp"/>
+
+                <!-- Button -->
+                <Button
+                    android:id="@+id/btnbook9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Book"
+                    android:backgroundTint="@color/blue"
+                    android:layout_below="@id/location9"
+                    android:layout_marginTop="8dp"/>
+            </RelativeLayout>
+
+
+            <!-- Shop 10 -->
+
+            <RelativeLayout
+                android:id="@+id/relative10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <!-- ImageView -->
+                <ImageView
+                    android:id="@+id/shop10"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/barbershop11"
+                    android:layout_columnSpan="2"/>
+
+                <!-- TextView 1 -->
+                <TextView
+                    android:id="@+id/shopname10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Shop Name"
+                    android:textSize="20sp"
+                    android:layout_below="@id/shop10"/>
+
+                <!-- TextView 2 -->
+                <TextView
+                    android:id="@+id/location10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nairobi"
+                    android:textSize="16sp"
+                    android:layout_below="@id/shopname10"
+                    android:layout_marginTop="8dp"/>
+
+                <!-- Button -->
+                <Button
+                    android:id="@+id/btnbook10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Book"
+                    android:backgroundTint="@color/blue"
+                    android:layout_below="@id/location10"
+                    android:layout_marginTop="8dp"/>
+            </RelativeLayout>
+
+        </GridLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottomnavigator"
+        app:itemBackground="@color/blue"
+        app:itemTextColor="@color/white"
+        app:itemIconTint="#0FF12D"
+        app:menu="@menu/menu"
+        app:labelVisibilityMode="labeled"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>
