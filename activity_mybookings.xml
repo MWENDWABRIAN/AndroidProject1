@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="START A CHAT"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:textColor="#000314"/>
+
+    <EditText
+        android:id="@+id/edttphone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="20dp"
+        android:hint="Enter phone number"
+        android:background="@drawable/etbackground"
+        android:padding="15sp"
+        android:maxLength="10"
+        android:inputType="phone"/>
+
+    <EditText
+        android:id="@+id/edtMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter message"
+        android:gravity="top"
+        android:padding="15sp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:inputType="textMultiLine"
+        android:background="@drawable/etbackground"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
+        android:lines="5"/>
+
+    <Button
+        android:id="@+id/btnsend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send SMS"
+        android:textStyle="bold"
+        android:backgroundTint="#0628F2"
+        android:textSize="40sp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="20dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/> <!-- This view occupies remaining space -->
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomnavigator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue"
+        app:itemBackground="@color/blue"
+        app:itemTextColor="@color/white"
+        app:itemIconTint="#0FF12D"
+        app:menu="@menu/menu"
+        app:labelVisibilityMode="labeled"/>
+
+</LinearLayout>
