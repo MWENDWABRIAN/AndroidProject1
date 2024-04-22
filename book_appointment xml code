@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#07AD1D"
     tools:context=".Book">
 
     <TextView
@@ -14,6 +15,7 @@
         android:layout_alignParentTop="true"
         android:gravity="center"
         android:textStyle="bold"
+        android:textColor="@color/white"
         android:layout_marginTop="20dp"
         android:text="@string/book_appointment"/>
 
@@ -27,6 +29,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:id="@+id/fullnamebook"
             android:hint="Full Name"/>
     </com.google.android.material.textfield.TextInputLayout>
@@ -37,6 +42,9 @@
         android:layout_width="match_parent"
         android:layout_below="@+id/bookfullname"
         android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/white"
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -49,8 +57,11 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/bookcontact"
         android:layout_width="match_parent"
+        android:background="@color/white"
         android:layout_below="@+id/bookaddress"
         android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -67,7 +78,10 @@
         android:id="@+id/bookdate"
         android:layout_width="match_parent"
         android:layout_below="@+id/bookcontact"
+        android:background="@color/white"
         android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -86,6 +100,7 @@
         android:layout_marginLeft="80dp"
         android:layout_marginRight="80dp"
         android:textStyle="bold"
+        android:backgroundTint="@color/blue"
         android:textSize="30dp"
         android:id="@+id/buttontime"
         android:onClick="popTimePicker"/>
@@ -96,6 +111,7 @@
         android:layout_below="@+id/buttontime"
         android:layout_marginTop="30dp"
         android:text="BOOK"
+        android:backgroundTint="@color/blue"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:textStyle="bold"
@@ -107,6 +123,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/buttonbook"
+        android:textColor="@color/white"
         android:text="View Services"
         android:textStyle="bold"
         android:textSize="20sp"
