@@ -2,6 +2,9 @@ package com.example.barbercustomer;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -9,15 +12,30 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.ArrayList;
+
 public class Book extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
-    Button[] buttons = new Button[10];
     SearchView searchView;
+    RecyclerView recyclerView;
+    Button bookButton;
+    ArrayList<ModelClassBook> arrayList;
+    ArrayList<ModelClassBook> searchList;
+    String[] barberList = new String[]{"Precision BarberShop", "Fade Masters BarberShop", "Classic Cuts BarberShop",
+            "Razor's Edge BarberShop","Style Haven BarberShop","Grooming Parlor BarberShop",
+            "Clipper Kingdom BarberShop", "The Gentleman's Den BarberShop", "The Trim & Tonic BarberShop",
+            "Sharp & Suave BarberShop"};
+
+    String[] locationNum = new String[]{"Nakuru", "Kileleshwa", "Machakos", "Naivasha",
+            "Eldoret", "Kariobangi", "Embakasi", "Kitale", "Nanyuki", "Ruiru"};
+
+    int[] imgList = new int[]{R.drawable.barbershop1, R.drawable.barbershop2, R.drawable.barbershop3,
+            R.drawable.barbershop4, R.drawable.barbershop5, R.drawable.barbershop11,
+            R.drawable.barbershop7, R.drawable.barbershop8, R.drawable.babrbershop9, R.drawable.barbershop10};
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -25,49 +43,87 @@ public class Book extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book);
 
-        // Initialize buttons
-        buttons[0] = findViewById(R.id.btnbook1);
-        buttons[1] = findViewById(R.id.btnbook2);
-        buttons[2] = findViewById(R.id.btnbook3);
-        buttons[3] = findViewById(R.id.btnbook4);
-        buttons[4] = findViewById(R.id.btnbook5);
-        buttons[5] = findViewById(R.id.btnbook6);
-        buttons[6] = findViewById(R.id.btnbook7);
-        buttons[7] = findViewById(R.id.btnbook8);
-        buttons[8] = findViewById(R.id.btnbook9);
-        buttons[9] = findViewById(R.id.btnbook10);
+        searchView = findViewById(R.id.searchview);
+        recyclerView = findViewById(R.id.recyclerview);
 
-        // Set click listener for all buttons
-        for (int i = 0; i < buttons.length; i++) {
-            final int index = i;
-            buttons[i].setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(Book.this, BookAppointment.class);
-                    startActivity(intent);
-                    finish();
-                }
-            });
+
+        arrayList = new ArrayList<>();
+
+        for (int i = 0; i < barberList.length; i++) {
+            ModelClassBook modelClassBook = new ModelClassBook();
+            modelClassBook.setBarbershopName(barberList[i]);
+            modelClassBook.setLocation(locationNum[i]);
+            modelClassBook.setImg(imgList[i]);
+            arrayList.add(modelClassBook);
         }
 
-        // Initialize SearchView
-        searchView = findViewById(R.id.searchView);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(Book.this);
+        recyclerView.setLayoutManager(layoutManager);
+
+        BookAdapter bookAdapter = new BookAdapter(Book.this, arrayList);
+        recyclerView.setAdapter(bookAdapter);
+
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                // Handle search query submission
-                // Implement your search logic here
-                return true;
+                searchList = new ArrayList<>();
+
+                if (query.length() > 0) {
+                    for (int i = 0; i < arrayList.size(); i++) {
+                        if (arrayList.get(i).getBarbershopName().toUpperCase().contains(query.toUpperCase()) || arrayList.get(i).getLocation().toUpperCase().contains(query.toUpperCase())) {
+                            ModelClassBook modelClassBook = new ModelClassBook();
+                            modelClassBook.setBarbershopName(arrayList.get(i).getBarbershopName());
+                            modelClassBook.setLocation(arrayList.get(i).getLocation());
+                            modelClassBook.setImg(arrayList.get(i).getImg());
+                            searchList.add(modelClassBook);
+                        }
+                    }
+
+                    RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(Book.this);
+                    recyclerView.setLayoutManager(layoutManager);
+
+                    BookAdapter bookAdapter = new BookAdapter(Book.this, searchList);
+                    recyclerView.setAdapter(bookAdapter);
+                } else {
+                    RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(Book.this);
+                    recyclerView.setLayoutManager(layoutManager);
+
+                    BookAdapter bookAdapter = new BookAdapter(Book.this, arrayList);
+                    recyclerView.setAdapter(bookAdapter);
+                }
+                return false;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                // Handle search query text change
-                // Implement your search logic here
-                return true;
+                searchList = new ArrayList<>();
+
+                if (newText.length() > 0) {
+                    for (int i = 0; i < arrayList.size(); i++) {
+                        if (arrayList.get(i).getBarbershopName().toUpperCase().contains(newText.toUpperCase()) || arrayList.get(i).getLocation().toUpperCase().contains(newText.toUpperCase())) {
+                            ModelClassBook modelClassBook = new ModelClassBook();
+                            modelClassBook.setBarbershopName(arrayList.get(i).getBarbershopName());
+                            modelClassBook.setLocation(arrayList.get(i).getLocation());
+                            modelClassBook.setImg(arrayList.get(i).getImg());
+                            searchList.add(modelClassBook);
+                        }
+                    }
+
+                    RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(Book.this);
+                    recyclerView.setLayoutManager(layoutManager);
+
+                    BookAdapter bookAdapter = new BookAdapter(Book.this, searchList);
+                    recyclerView.setAdapter(bookAdapter);
+                } else {
+                    RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(Book.this);
+                    recyclerView.setLayoutManager(layoutManager);
+
+                    BookAdapter bookAdapter = new BookAdapter(Book.this, arrayList);
+                    recyclerView.setAdapter(bookAdapter);
+                }
+                return false;
             }
         });
-
 
         bottomNavigationView = findViewById(R.id.bottomnavigator);
         bottomNavigationView.setSelectedItemId(R.id.book);
