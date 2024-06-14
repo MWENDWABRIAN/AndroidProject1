@@ -1,120 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:background="@color/green"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <!-- Logout button -->
+    <Button
+        android:id="@+id/logoutmainButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:text="Logout"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/blue"
+        android:padding="10dp" />
+
+    <!-- ScrollView to contain scrollable content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/logoutmainButton"
+        android:layout_above="@id/bottomnavigatorowner"
+        android:background="@color/green">
+
+        <!-- Linear layout to hold the content -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Text view for Upload Images -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Upload Images"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- ImageView for uploaded image -->
+            <ImageView
+                android:id="@+id/imageViewUploaded"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:visibility="gone" />
+
+            <!-- Button to select images -->
+            <Button
+                android:id="@+id/buttonUploadImages"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/blue"
+                android:text="Select Images" />
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Text view for Services Offered -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Services Offered"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- EditText for services -->
+            <EditText
+                android:id="@+id/editTextServices"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Add services offered"
+                android:maxLines="5"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Text view for Address -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- EditText for address -->
+            <EditText
+                android:id="@+id/editTextAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Add address"
+                android:maxLines="5"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Text view for Contact -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Contact"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- EditText for contact -->
+            <EditText
+                android:id="@+id/editTextContact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Add contact details"
+                android:inputType="phone"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Save button -->
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Save"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:id="@+id/buttonSave"
+                android:backgroundTint="@color/blue"/>
+
+            <!-- View Bookings button -->
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:text="View Bookings"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:id="@+id/buttonview"
+                android:backgroundTint="@color/blue"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation View -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:id="@+id/bottomnavigatorowner"
+        app:itemBackground="@color/blue"
+        app:itemTextColor="@color/white"
+        app:itemIconTint="#0FF12D"
+        app:menu="@menu/menuowner"
+        app:labelVisibilityMode="labeled"
+        android:layout_alignParentBottom="true"/>
 
-        <!-- Image upload -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Upload Images"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-
-        <!-- ImageView to display uploaded image -->
-        <ImageView
-            android:id="@+id/imageViewUploaded"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:visibility="gone" />
-
-        <!-- Button to upload images -->
-        <Button
-            android:id="@+id/buttonUploadImages"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Select Images" />
-
-        <!-- Horizontal divider -->
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/darker_gray"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp" />
-
-        <!-- Services -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Services Offered"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <!-- Edit text for adding services -->
-        <EditText
-            android:id="@+id/editTextServices"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Add services offered"
-            android:maxLines="5"
-            android:layout_marginBottom="16dp" />
-
-        <!-- Horizontal divider -->
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/darker_gray"
-            android:layout_marginBottom="16dp" />
-
-        <!-- Address -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Address"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <!-- Edit text for adding address -->
-        <EditText
-            android:id="@+id/editTextAddress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Add address"
-            android:maxLines="5"
-            android:layout_marginBottom="16dp" />
-
-        <!-- Horizontal divider -->
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/darker_gray"
-            android:layout_marginBottom="16dp" />
-
-        <!-- Contact -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Contact"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <!-- Edit text for adding contact details -->
-        <EditText
-            android:id="@+id/editTextContact"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Add contact details"
-            android:inputType="phone"
-            android:layout_marginBottom="16dp" />
-
-        <!-- Save button -->
-        <Button
-            android:id="@+id/buttonSave"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Save" />
-
-    </LinearLayout>
-</ScrollView>
+</RelativeLayout>
